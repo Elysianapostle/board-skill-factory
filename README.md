@@ -6,9 +6,11 @@
 
 这是一个 [Agent Skills](https://agentskills.io) 格式的 skill（`SKILL.md` + 附属资源），适用于 ZCode、Claude Code 等任何支持 skill 机制的 AI 编码工具。
 
+**适用范围**：STM32 / GD32 / CH32 / ESP32 / RP2040 / AVR 等 MCU 开发板；流程对"AI 辅助嵌入式/固件开发"通用。
+
 ## 为什么需要它（实战教训）
 
-我们给一块自制 STM32F103RCT6 开发板搭建 AI 开发工作流时，踩过三个典型的坑：
+你在 GitHub 搜"STM32 AI"、"AI 嵌入式"，找到的要么是 ST 官方的大而全工具，要么是跑分 demo——**缺的是"让 AI 能真正接管一块具体板子"的工作流**。我们给一块自制 STM32F103RCT6 开发板搭建 AI 开发工作流时，踩过三个典型的坑：
 
 1. **原理图文本层提取不可信**——直接解析 PDF 文本配对引脚网络，先后把按键映射（KEY1/KEY2 错位一行）、OLED 的 SCK/RES、扩展排针的顶脚（其实是 GND）全部配错。错误映射 + 固件监听悬空引脚，还制造出"按键时好时坏、摸一下板子灯就翻转"的**悬空脚闹鬼**假象，一度误诊为虚焊。
 2. **GUI 工具链是人工瓶颈**——"先用 CubeMX 配好再给 AI"意味着每改一次引脚都要人工点一遍 GUI，AI 无法自闭环。
@@ -83,3 +85,7 @@ skill 装好后，对 AI 说：
 ## License
 
 [MIT](LICENSE)
+
+---
+
+**Keywords / 关键词**: STM32 AI, STM32 skill, AI skill, Claude Code skill, agent skill, embedded AI, AI 辅助嵌入式开发, 固件开发, firmware development, pin map, datasheet-to-skill
